@@ -39,7 +39,7 @@ dT = str2double(initialparametersinput{4});
 
 % Provide simulation parameters
 dimensioniality = 2;
-SPACE_UNITS = 'µm';
+SPACE_UNITS = 'Âµm';
 TIME_UNITS = 's';
 
 %% Thresholding
@@ -118,7 +118,7 @@ end
 %         displacement{j}(k,2) = (ma.tracks{j}(k+1,2) - ma.tracks{j}(k,2));
 %         displacement{j}(k,3) = (ma.tracks{j}(k+1,3) - ma.tracks{j}(k,3));
 %         displacement(k,4) = {
-%             d = ((x2 - x1)2 + (y2 - y1)2  + (z2 - z1)2)½
+%             d = ((x2 - x1)2 + (y2 - y1)2  + (z2 - z1)2)Â½
     
    % trackMSD(j,1) = {ma.tracks{j}(1:m,2)}
 
@@ -265,7 +265,7 @@ Dmean = mean(ma.lfit.a(good_enough_fit))/2/ma.n_dim;
 Dstd  =  std(ma.lfit.a(good_enough_fit))/2/ma.n_dim;
 
 fprintf('Estimation of the diffusion coefficient from linear fit of the MSD curves:\n')
-fprintf('D = %.3g ± %.3g (mean ± std, N = %d)\n', ...
+fprintf('D = %.3g Â± %.3g (mean Â± std, N = %d)\n', ...
     Dmean, Dstd, sum(good_enough_fit));
 
 % Plot CDF and frequency distributions of Deff values 
@@ -308,7 +308,7 @@ histfit(ma.lfit.a(good_enough_fit)/2/ma.n_dim,[],'kernel')
 % 
 % fprintf('Estimation from velocities histogram:\n')
 % fprintf('D = %.3g %s', ...
-%     Dest, [SPACE_UNITS '²/' TIME_UNITS]);
+%     Dest, [SPACE_UNITS 'Â²/' TIME_UNITS]);
 % %end
 
 %%
@@ -329,4 +329,4 @@ histfit(ma.lfit.a(good_enough_fit)/2/ma.n_dim,[],'kernel')
 % 
 % fprintf('Estimation from velocities histogram:\n')
 % fprintf('D = %.3g %s, real value was %.3g %s\n', ...
-%     Dest, [SPACE_UNITS '²/' TIME_UNITS], D, [SPACE_UNITS '²/' TIME_UNITS]);
+%     Dest, [SPACE_UNITS 'Â²/' TIME_UNITS], D, [SPACE_UNITS 'Â²/' TIME_UNITS]);
