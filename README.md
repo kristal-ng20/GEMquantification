@@ -1,5 +1,48 @@
-# GEMquantification
+# README
 
+3 scripts of importance:
+GEM_analysis_with_dialog.m - brings up dialog boxes for file inputs (don't need to set in the script)
+GEM_analysis_no_dialog.m - without dialog boxes, runs faster, set inputs directly in the script
+combine_CDF.m - plot and combine CDF plots of different conditions in the same plot *could be made into a function*
+
+# FIJI TrackMate
+
+Before using these scripts, you need tracks generated from TrackMate:
+ 
+Helpful links:
+Trackmate manual: https://imagej.net/_images/8/85/TrackMate-manual.pdf
+ 
+Open image on Fiji 
+Stack order XYTCZ, and Split Channels
+Crop ROI
+	
+Open TrackMate 
+Plugins -> Tracking -> TrackMate
+
+Use these parameters:
+Time interval - set based on time imaged/no. of frames
+Select ‘DoG Detector’
+Estimated blob diameter: 0.4 micron
+		Threshold: ~ 0.4-0.6 (variable)
+		Check ‘Use median filter’ and ‘Do sub-pixel localisation’
+		-> Preview to check thresholding
+Initial Thresholding: Consider all spots, note down number of spots registered
+Select a view: Hyperstack Displayer
+Set filters on spots: I select Uniform color
+Select a tracker: Simple LAP tracker (does not allow track splitting and merging)
+Simple LAP tracker (parameters based on Delarue paper)
+Linking max distance: 1 micron
+Gap-closing max distance: 1.6 micron
+Gap-closing max frame gap: 2
+Note down number of tracks found
+Set filters on tracks: I select Track index
+Display options
+Button ‘Analysis’ - gives track statistics (displacement, speed, location)
+Save ‘Analysis’ file 
+Select an action: Select ‘Export tracks to XML file’ to save tracks file
+
+
+# GEMquantification (using scripts)
 
 MSD Analysis on Matlab
 
@@ -12,11 +55,6 @@ https://tinevez.github.io/msdanalyzer/tutorial/MSDTuto_brownian.html
 Once downloaded, unzip and put whole folder in matlab bin folder 
 For mac it might be: /Applications/MATLAB_R2019a.app/bin/
 For windows it might be: C:\Program Files\MATLAB\R2019a\bin\
-
-MSD analysis script versions:
-
-https://github.com/kristal-ng20/GEMquantification/blob/master/trackmatemsdanalysis3.m
-
 
 %% Initialize paths and folders
 Sets paths, calls file names and opens track file
@@ -102,7 +140,6 @@ Number of turns
 MSD values
 Weighted MSD mean values
 Diffusion coefficient
-
 
 
 
