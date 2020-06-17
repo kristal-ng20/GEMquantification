@@ -1,7 +1,7 @@
 # README
 
 3 scripts of importance:
-GEM_analysis_with_dialog.m - brings up dialog boxes for file inputs (don't need to set in the script)
+//GEM_analysis_with_dialog.m - brings up dialog boxes for file inputs (don't need to set in the script)
 GEM_analysis_no_dialog.m - without dialog boxes, runs faster, set inputs directly in the script
 combine_CDF.m - plot and combine CDF plots of different conditions in the same plot *could be made into a function*
 
