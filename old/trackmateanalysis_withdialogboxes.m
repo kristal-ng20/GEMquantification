@@ -46,7 +46,7 @@ dT = str2double(initialparametersinput{4});
 
 % Provide simulation parameters (should remain unchanged)
 dimensioniality = 2;
-SPACE_UNITS = 'µm';
+SPACE_UNITS = 'Âµm';
 TIME_UNITS = 's';
 
 %% Initial thresholding (frames and time)
