@@ -43,7 +43,7 @@ dT = extractfield(md, 'frameInterval');% Time step between acquisition
 
 % Provide simulation parameters (should remain unchanged)
 dimensioniality = 2;
-SPACE_UNITS = 'µm';
+SPACE_UNITS = 'Âµm';
 TIME_UNITS = 's';
 
 
@@ -329,11 +329,11 @@ good_enough_fit = ma.lfit.r2fit > 0.8; %make changeable??
 Dmean = mean(ma.lfit.a(good_enough_fit))/2/ma.n_dim;
 Dstd  =  std(ma.lfit.a(good_enough_fit))/2/ma.n_dim;
 
-message = sprintf('Estimated diffusion coefficient D = %.3g ± %.3g (N = %d)', Dmean, Dstd, sum(good_enough_fit));
+message = sprintf('Estimated diffusion coefficient D = %.3g Â± %.3g (N = %d)', Dmean, Dstd, sum(good_enough_fit));
 uiwait(warndlg(message));
 
 % fprintf('Estimation of the diffusion coefficient from linear fit of the MSD curves:\n')
-% fprintf('D = %.3g ± %.3g (mean ± std, N = %d)\n', ...
+% fprintf('D = %.3g Â± %.3g (mean Â± std, N = %d)\n', ...
 %     Dmean, Dstd, sum(good_enough_fit));
 
 % Plot CDF and frequency distributions of Deff values 
@@ -433,7 +433,7 @@ writetable(diffcoefftab,fullFileName,'Sheet','Diffusion_coefficient');
 % fprintf('Parabolic fit of the average MSD curve with 95%% confidence interval:\n')
 % 
 % fprintf('D = %.3g [ %.3g - %.3g ] %s, real value was %.3g %s\n', ...
-%     Dfit, Dci(1), Dci(2), [SPACE_UNITS '²/' TIME_UNITS], D, [SPACE_UNITS '²/' TIME_UNITS]);
+%     Dfit, Dci(1), Dci(2), [SPACE_UNITS 'Â²/' TIME_UNITS], D, [SPACE_UNITS 'Â²/' TIME_UNITS]);
 % 
 % fprintf('V = %.3g [ %.3g - %.3g ] %s, real value was %.3g %s\n', ...
 %     Vfit, Vci(1), Vci(2), [SPACE_UNITS '/' TIME_UNITS], vm, [SPACE_UNITS '/' TIME_UNITS]);
